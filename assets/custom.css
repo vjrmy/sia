@@ -1,0 +1,9 @@
+p.mr-5 {
+  margin-left: 1rim;
+  margin-right:2rim;
+}
+.col-lg-5{
+  background-image: url(../unkartur/bg-mobile.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+}
