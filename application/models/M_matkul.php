@@ -1,6 +1,5 @@
 <?php
 class M_matkul extends CI_Model{
- 
   function get_hari(){ 
     $hari=$this->db->get('tbl_hari');
     return $hari;
