@@ -7,11 +7,11 @@
                 Jadwal Kelas Perkuliahan
                 </h5>
                 <br>
-                <button class="btn btn-success" data-toggle="modal" data-target="#myModalAdd">Add New</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="matkulAdd">Add New</button>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table" id="mytable">
+                    <table class="table" id="matkul">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -30,6 +30,79 @@
             </div>
         </div>
 </section>
+    <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel33" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+            role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel33">Login Form </h4>
+                    <button type="button" class="close" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <form class="form">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label for="first-name-column">First Name</label>
+                                <input type="text" id="first-name-column" class="form-control"
+                                    placeholder="First Name" name="fname-column">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label for="last-name-column">Last Name</label>
+                                <input type="text" id="last-name-column" class="form-control"
+                                    placeholder="Last Name" name="lname-column">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label for="city-column">City</label>
+                                <input type="text" id="city-column" class="form-control" placeholder="City"
+                                    name="city-column">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label for="country-floating">Country</label>
+                                <input type="text" id="country-floating" class="form-control"
+                                    name="country-floating" placeholder="Country">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label for="company-column">Company</label>
+                                <input type="text" id="company-column" class="form-control"
+                                    name="company-column" placeholder="Company">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label for="email-id-column">Email</label>
+                                <input type="email" id="email-id-column" class="form-control"
+                                    name="email-id-column" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group col-12">
+                            <div class='form-check'>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox5" class='form-check-input' checked>
+                                    <label for="checkbox5">Remember Me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
             </div>
 
 
@@ -39,76 +112,15 @@
 <script src="<?= base_url() ?>assets/extensions/jquery/jquery.min.js"></script>
 <script>
         $(document).ready(function(){
-                // Setup datatables
-                $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings){
-            return {
-                "iStart": oSettings._iDisplayStart,
-                "iEnd": oSettings.fnDisplayEnd(),
-                "iLength": oSettings._iDisplayLength,
-                "iTotal": oSettings.fnRecordsTotal(),
-                "iFilteredTotal": oSettings.fnRecordsDisplay(),
-                "iPage": Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
-                "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
-            };
-        };
-    
-        var table = $("#mytable").dataTable({
-            initComplete: function() {
-                var api = this.api();
-                $('#mytable_filter input')
-                    .off('.DT')
-                    .on('input.DT', function() {
-                        api.search(this.value).draw();
-                });
-            },
-                oLanguage: {
-                sProcessing: "loading..."
-            },
-                processing: true,
-                serverSide: true,
-                ajax: {"url": "<?php echo base_url()?>Matkul/get_produk_json", "type": "POST"},
-                        columns: [
-                        {"data": "mk_id"},
-                        {"data": "thn_ajar"},
-                        {"data": "nama_jrs"},
-                        {"data": "fakultas"},
-                        {"data": "matkul"},
-                        {"data": "semester"},
-                        {"data": "ruang"},
-                        {"data": "hari"},
-                        {"data": "waktu"},
-                        {"data": "view"}
-                    ],
-                        order: [[1, 'asc']],
-            rowCallback: function(row, data, iDisplayIndex) {
-                var info = this.fnPagingInfo();
-                var page = info.iPage;
-                var length = info.iLength;
-                $('td:eq(0)', row).html();
-            }
-    
-        });
-                        // end setup datatables
-                        // get Edit Records
-        //                 $('#mytable').on('click','.edit_record',function(){
-        //     var kode=$(this).data('kode');
-        //     var nama=$(this).data('nama');
-        //     var harga=$(this).data('harga');
-        //     var kategori=$(this).data('kategori');
-        //     $('#ModalUpdate').modal('show');
-        //     $('[name="kode_barang"]').val(kode);
-        //         $('[name="nama_barang"]').val(nama);
-        //         $('[name="harga"]').val(harga);
-        //         $('[name="kategori"]').val(kategori);
-        // });
-        // End Edit Records
-        // get Hapus Records
-        // $('#mytable').on('click','.hapus_record',function(){
-        //     var kode=$(this).data('kode');
-        //     $('#ModalHapus').modal('show');
-        //     $('[name="kode_barang"]').val(kode);
-        // });
-        // End Hapus Records
-        
+            $("#matkul").DataTable({
+                "processing": true,
+                "serverSide": true,
+                "order": [],
+                "ajax": {
+                    "url": "<?= base_url('Matkul/getData'); ?>",
+                    "type": "POST"
+                },
+                
+            });
         });
 </script>
