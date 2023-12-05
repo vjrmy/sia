@@ -120,7 +120,10 @@
                     "url": "<?= base_url('Matkul/getData'); ?>",
                     "type": "POST"
                 },
-                
+                "columnDefs": [{
+                    "target":[-1],
+                    "orderable": false
+                }]
             });
         });
 </script>

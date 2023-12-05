@@ -1,18 +1,17 @@
 <?php
-class M_matkul extends CI_Model{
-  function get_hari(){ 
-    $hari=$this->db->get('tbl_hari');
-    return $hari;
-  }
-  function get_jurus(){ 
-    $jrs=$this->db->get('tbl_jurusan');
-    return $jrs;
-  }
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-  function get_peri(){ 
-      $per=$this->db->get('tbl_periode');
-      return $per;
-    }
+class M_matkul extends CI_Model{
+
+  var $hari=$this->db->get('tbl_hari');
+  var $jrs=$this->db->get('tbl_jurusan');
+  var $per=$this->db->get('tbl_periode');
+  var $column_order= array('id', 'periode', 'jrs', 'matkul', 'semester', 'ruang', 'hari', 'waktu',);
+  var $order
+  public function getDataTables(){
+
+  }
+  
 
   function get_matkul() { 
     $this->datatables->select('*');

@@ -1,11 +1,12 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Matkul extends CI_Controller{
   function __construct(){
     parent::__construct();
-    $this->load->library('datatables'); //load library ignited-dataTable
     $this->load->model('M_matkul'); //load model M_matkul
   }
-  function index(){
+  public function index(){
     $data=array(
       'nama' => $this->session->userdata('ses_nama'),
       'hari'     => $this->M_matkul->get_hari(),
@@ -19,12 +20,11 @@ class Matkul extends CI_Controller{
     $this->load->view('template_admin/footer');
 
   }
- 
-  function get_produk_json() { //data data produk by JSON object
-    header('Content-Type: application/json');
-    echo $this->M_matkul->get_matkul();
+
+  public function getData() { 
+    $result = $this->M_matkul->getDataTables();
   }
- 
+
   function simpan(){ //function simpan data
     $data=array(
       // 'id' => $this->input->post('id'),
