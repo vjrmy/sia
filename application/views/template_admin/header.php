@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="<?= base_url() ?>/assets/extensions/@icon/dripicons/dripicons.css">
   <link rel="stylesheet" href="<?= base_url() ?>/assets/compiled/css/ui-icons-dripicons.css">
   <link rel="stylesheet" href="<?= base_url() ?>/assets/extensions/@fortawesome/fontawesome-free/css/all.min.css">
+  
   <link rel="stylesheet" href="<?= base_url() ?>/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>/assets/compiled/css/table-datatable-jquery.css">
 
