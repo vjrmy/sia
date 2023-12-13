@@ -52,6 +52,7 @@ class Home extends CI_Controller {
 				'nama' => $this->session->userdata('ses_nama'),
 				'jrs' => $this->session->userdata('ses_jrs'),
 				'fakul' => $this->session->userdata('ses_fakul'),
+				'smt' => $this->session->userdata('ses_smt'),
 				'sks' => $this->session->userdata('ses_sks'),
 				'akt' => $this->session->userdata('ses_akt'),
 				'akses' => $this->session->userdata('akses'));

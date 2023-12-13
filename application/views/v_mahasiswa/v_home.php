@@ -13,7 +13,7 @@
                             <h4>Hi, <strong><?= $nama ?></strong> dengan NIM <strong><?= $nim ?></strong></h4>
                         </div>
                         <div class="card-body">
-                            <p>Saat ini kamu adalah seorang <strong><?= $akses ?></strong> jurusan <strong><?= $jrs ?></strong> fakultas <strong><?= $fakul ?></strong> angkatan <strong><?= $akt ?></strong> yang telah berhasil menempuh <strong><?= $sks ?> sks dari 160 sks</strong>. Tetap semangat belajar, ya!</p>
+                            <p>Saat ini kamu adalah seorang <strong><?= $akses ?></strong> jurusan <strong><?= $jrs ?></strong> fakultas <strong><?= $fakul ?></strong> angkatan <strong><?= $akt ?></strong> yang telah berhasil menempuh <strong><?= $sks ?> sks dari 256 sks</strong>. Tetap semangat belajar, ya!</p>
                         </div>
                     </div>
                 </div>

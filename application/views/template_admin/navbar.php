@@ -21,10 +21,10 @@
                                     </div>
                                 </a>
                                 <ul class="menu-item dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="topbarUserDropdown">
-                                  <li><a class="dropdown-item" href="#"><i class="far fa-image"></i> Ubah Foto Profil</a></li>
-                                  <li><a class="dropdown-item" href="#"><i class="fas fa-key"></i> Ubah Password</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="<?= base_url('login/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="far fa-image"></i> Ubah Foto Profil</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-key"></i> Ubah Password</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="<?= base_url('login/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
                                 </ul>
                             </div>
 
@@ -307,6 +307,15 @@
                                     </div>    
                                 </div>           
                             </li>
+
+                                <?php if($this->session->userdata('ses_smt') > 5){ ?>
+                                    <li
+                                        class="menu-item  ">
+                                        <a href="<?php echo base_url() ?>Tts" class='menu-link'>
+                                            <span><i class="fas fa-tachometer-alt"></i> Tes Tingkat Stress Mahasiswa</span>
+                                        </a>
+                                    </li>
+                                <?php }; ?>
                             <?php }; ?>
                             
                         </ul>

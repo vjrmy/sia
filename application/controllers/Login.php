@@ -65,6 +65,7 @@ class Login extends CI_Controller {
                     $this->session->set_userdata('ses_pass',$data['pass']);
                     $this->session->set_userdata('ses_jrs',$data['nama_jrs']);
                     $this->session->set_userdata('ses_fakul',$data['fakultas']);
+                    $this->session->set_userdata('ses_smt',$data['smt']);
                     $this->session->set_userdata('ses_sks',$data['sks']);
                     $this->session->set_userdata('ses_akt',$data['angkatan']);
                     echo "mahasiswa";
