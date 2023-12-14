@@ -17,19 +17,19 @@
                                                                 <h6 for="soal1">1. Dalam sebulan terakhir, seberapa sering Anda merasa kesal karena sesuatu yang terjadi secara tidak terduga?</h6>
                                                                 
                                                                     <div  style="display: inline-block; margin:5px;">
-                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="a" value="a" required><br><label style="width: 200px; text-align:center;" for="a">Tidak Pernah</label>
+                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="a-a" value="a" required><br><label style="width: 200px; text-align:center;" for="a">Tidak Pernah</label>
                                                                     </div>
                                                                     <div style="display: inline-block; margin:5px;">
-                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="b" value="b"><br><label style="width: 200px; text-align:center;" for="b">Jarang</label>
+                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="b-b" value="b"><br><label style="width: 200px; text-align:center;" for="b">Jarang</label>
                                                                     </div>
                                                                     <div style="display: inline-block; margin:5px;">
-                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="c" value="c"><br><label style="width: 200px; text-align:center;" for="c">Kadang-kadang</label>
+                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="c-c" value="c"><br><label style="width: 200px; text-align:center;" for="c">Kadang-kadang</label>
                                                                     </div>
                                                                     <div style="display: inline-block; margin:5px;">
-                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="d" value="d"><br><label style="width: 200px; text-align:center;" for="d">Cukup Sering</label>
+                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="d-d" value="d"><br><label style="width: 200px; text-align:center;" for="d">Cukup Sering</label>
                                                                     </div>
                                                                     <div style="display: inline-block; margin:5px;">
-                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="e" value="e"><br><label style="width: 200px; text-align:center;" for="e">Sering Sekali</label>
+                                                                    <input style="width: 200px; text-align:center;" type="radio" name="opsi1" id="e-e" value="e"><br><label style="width: 200px; text-align:center;" for="e">Sering Sekali</label>
                                                                     </div>
                                                             </div>
                                                             <br>
@@ -242,7 +242,7 @@
 
                                                         </div>
                                                         <div class="col-12 d-flex justify-content-end">
-                                                            <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                            <button type="submit" value="submit"  class="btn btn-primary me-1 mb-1">Submit</button>
                                                             <!-- <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button> -->
                                                         </div>
                                                     </div>

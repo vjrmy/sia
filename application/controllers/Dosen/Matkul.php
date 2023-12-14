@@ -31,7 +31,9 @@ class Matkul extends CI_Controller
     foreach ($results as $result){
       $row = array();
       $row[] = ++$no;
-      $row[] = $result->
+      $row[] = $result->per_id;
+      $row[] = $result->jrs_id;
+      $row[] = $result->matkul;
     }
   }
 }

@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_matkul extends CI_Model{
   var $table= 'tbl_matkul';
-  var $column_order= array('id', 'periode', 'jrs', 'matkul', 'semester', 'ruang', 'hari', 'waktu',);
-  var $order =array('id', 'periode', 'jrs', 'matkul', 'semester', 'ruang', 'hari', 'waktu',);
+  var $column_order= array('mkl_id', 'per_id', 'jrs_id', 'matkul', 'semester', 'ruang', 'hari_id', 'waktu',);
+  var $order =array('mkl_id', 'per_id', 'jrs_id', 'matkul', 'semester', 'ruang', 'hari_id', 'waktu',);
 
   public function get_hari(){
     $hari = $this->db->get('tbl_hari');
@@ -51,9 +51,9 @@ class M_matkul extends CI_Model{
     // $this->db->from($this->table);
     $this->db->select('*');
     $this->db->from('tbl_matkul');
-    $this->db->join('tbl_periode', 'periode=per_id');
-    $this->db->join('tbl_jurusan', 'jrs=jrs_id');
-    $this->db->join('tbl_hari', 'hari=hari_id'); 
+    $this->db->join('tbl_periode', 'per_id=per_id');
+    $this->db->join('tbl_jurusan', 'jrs_id=jrs_id');
+    $this->db->join('tbl_hari', 'hari_id=hari_id'); 
     $this->db->add_column('view', '<a href="javascript:void(0);" class="edit_record btn btn-info btn-xs" data-kode="$1" data-nama="$2" data-harga="$3" data-kategori="$4">Edit</a>  <a href="javascript:void(0);" class="hapus_record btn btn-danger btn-xs" data-kode="$1">Hapus</a>','barang_kode,barang_nama,barang_harga,kategori_id,kategori_nama');
     return $this->db->count_all_results();
   }

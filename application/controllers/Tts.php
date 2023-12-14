@@ -50,7 +50,10 @@ class Tts extends CI_Controller {
             'smt' => $this->session->userdata('ses_smt'),
             'sks' => $this->session->userdata('ses_sks'),
             'akt' => $this->session->userdata('ses_akt'),
-            'akses' => $this->session->userdata('akses'));
+            'akses' => $this->session->userdata('akses'),
+            'stress' => $this->session->flashdata('tingkat_stres'),
+            'persen' => $this->session->flashdata('persen_format'),
+        );
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/navbar',$data);
         $this->load->view('v_tts2',$data);
@@ -64,26 +67,31 @@ $bobot = ['a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5];
 
 // Mengalikan setiap nilai dengan bobotnya
 foreach ($data as $kunci => $nilai) {
-    $skorTotal += $nilai * $bobot[$kunci];
+    if (isset($bobot[$nilai])) {
+        $skorTotal += $bobot[$nilai];
+    }
 }
 
 // Membagi skor total dengan jumlah poin
-$jumlahPoin = count($data) * 5;
-$persenSkor = $skorTotal / $jumlahPoin;
+// $jumlahPoin = count($data) * 5;
+$persenSkor = $skorTotal * 2;
 $persenFormat = number_format($persenSkor, 2) . '%';
 
+
+
 // Menentukan tingkat stres
-if ($skorTotal > 80 ) {
+if ($persenSkor > 80 ) {
     $tingkatStres = 'Sangat Tinggi';
-} elseif ($skorTotal > 60) {
+} elseif ($persenSkor > 60) {
     $tingkatStres = 'Tinggi';
-}elseif ($skorTotal > 40) {
+} elseif ($persenSkor > 40) {
     $tingkatStres = 'Sedang';
-}elseif ($skorTotal > 20) {
+} elseif($persenSkor > 20)  {
     $tingkatStres = 'Rendah';
 } else {
     $tingkatStres = 'Tidak Stress';
 }
+    
 
 $this->session->set_flashdata('tingkat_stres', $tingkatStres);
 $this->session->set_flashdata('persen_format', $persenFormat);

@@ -9,9 +9,9 @@
                                             <h4 style="text-align:center; position: relative">Hi, <strong><?= $nama ?></strong></h4>
                                         </div>
                                         <div class="card-body">
-                                            <h6 style="text-align:center; position: relative">Tingkat Stress mu <strong><?= $tingkatStres ?></strong></h6>
+                                            <h6 style="text-align:center; position: relative">Tingkat Stressmu <strong><?= $stress; ?></strong></h6>
                                             <br>
-                                            <h6 style="text-align:center; position: relative">Kadar Stress mu <strong><?= $persenFormat ?></strong></h6>
+                                            <h6 style="text-align:center; position: relative">Kadar Stressmu <strong><?= $persen; ?></strong></h6>
                                         </div>
                                     </div>
                                 </div>
@@ -20,4 +20,4 @@
                     </section>
                 </div>
                 
-                            </div>
+</div>
